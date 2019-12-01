@@ -22,7 +22,7 @@ function DisplayText(_value){
 			displaytest.__KeyValueFromString("fadeOut", "0");
 			displaytest.__KeyValueFromString("holdtime", "1");
 			displaytest.__KeyValueFromString("spawnflags" "1");
-			displaytest.__KeyValueFromString("channel", "2");
+			displaytest.__KeyValueFromString("channel", "4");
 			}else{
 			displaytest.__KeyValueFromString("message","BossHP  " + _value);
 			}
@@ -68,7 +68,7 @@ function DisplayText2(_value){
 			displaytest2 = Entities.CreateByClassname("game_text");
 			displaytest2.__KeyValueFromString("message","BossTime " + _value);
 			displaytest2.__KeyValueFromString("x", "0.0");
-			displaytest2.__KeyValueFromString("y", "0.4");
+			displaytest2.__KeyValueFromString("y", "0.3");
 			displaytest2.__KeyValueFromString("effect", "2");
 			displaytest2.__KeyValueFromString("color", "255 0 128");
 			displaytest2.__KeyValueFromString("channel", "5");
@@ -90,11 +90,11 @@ function DisplayText3(_value){
 		if(displaytest3 == null){
 			displaytest3 = Entities.CreateByClassname("game_text");
 			displaytest3.__KeyValueFromString("message","MisakaHP " + _value);
-			displaytest3.__KeyValueFromString("x", "0.0");
-			displaytest3.__KeyValueFromString("y", "0.5");
+			displaytest3.__KeyValueFromString("x", "0.2");
+			displaytest3.__KeyValueFromString("y", "0.7");
 			displaytest3.__KeyValueFromString("effect", "2");
 			displaytest3.__KeyValueFromString("color", "255 199 28");
-			displaytest3.__KeyValueFromString("channel", "3");
+			displaytest3.__KeyValueFromString("channel", "2");
 			displaytest3.__KeyValueFromString("fadein", "0");
 			displaytest3.__KeyValueFromString("fadeOut", "0");
 			displaytest3.__KeyValueFromString("holdtime", "1");
