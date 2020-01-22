@@ -1,6 +1,6 @@
 //
 //		OFFICIAL ZE_SANTASSINATION_V3 STRIPPER SOLUTION
-//		UPDATED: 2019-07-15 (#4)
+//		UPDATED: 2019-10-18 (#6)
 //		CONTACT: https://steamcommunity.com/id/LuffarenPer/
 //
 //============================================================================\\
@@ -27,14 +27,21 @@
 //		the bosses will give you a small time-window before it starts moving (allowing for more nades to land)
 //		a point_worldtext in ACT3-spawn has been added (to ensure/show people that the stripper is active)
 // ---------------------->
+// EDIT #6(2019-10-18)
+// NERFED ITEM DAMAGE IN GENERAL THROUGH STRIPPER:
+// > nerfed minicannon damage 	(from 125 to 50)
+// > nerfed beam-cannon damage 	(from 375 to 250)
+// > nerfed rocket damage 		(from 1000 to 500)	*direct rocket hit*
+// > nerfed explosion damage 	(from 500 to 300)	*general explosions, including when rocket hits*
+// ---------------------->
 //----------------------------------------------------------------------------\\
 //DO NOT ALTER THESE VALUES, if something seems off, contact me (Luffaren):
 //>>>>>		https://steamcommunity.com/id/LuffarenPer/
 //----------------------------------------------------------------------------\\
-DAMAGE_MINIGUN <- 125;		//the actual trigger would damage 125	(minigun > ticks really fast, 	0.07s cooldown)
-DAMAGE_BEAM <- 375;			//the actual trigger would damage 375	(laser > ticks at each fire, 	1.00s cooldown)
-DAMAGE_EXPLOSION <- 500;	//the actual trigger would damage 500	(explosion > from rocket,		7.50s cooldown)
-DAMAGE_ROCKET <- 1000;		//the actual trigger would damage 1000	(rocket direct hit,				7.50s cooldown)
+DAMAGE_MINIGUN <- 50;		//the actual trigger would damage 50	(minigun > ticks really fast, 	0.07s cooldown)
+DAMAGE_BEAM <- 250;			//the actual trigger would damage 250	(laser > ticks at each fire, 	1.00s cooldown)
+DAMAGE_EXPLOSION <- 300;	//the actual trigger would damage 300	(explosion > from rocket,		7.50s cooldown)
+DAMAGE_ROCKET <- 500;		//the actual trigger would damage 500	(rocket direct hit,				7.50s cooldown)
 //============================================================================\\
 ticking <- false;
 lastrocket <- null;
@@ -67,11 +74,13 @@ function ClearBossTarget()
 	{
 		worldtext = true;
 		local e = Entities.CreateByClassname("point_worldtext");
-		EntFireByHandle(e,"AddOutput","message LUFFAREN OFFICIAL STRIPPER #4 (2019-07-15)",0.00,null,null);
+		EntFireByHandle(e,"AddOutput","message LUFFAREN OFFICIAL STRIPPER #6 (2019-10-18)",0.00,null,null);
 		EntFireByHandle(e,"AddOutput","textsize 8",0.00,null,null);
 		EntFireByHandle(e,"AddOutput","origin -4605 -7015 -5100",0.00,null,null);
 		EntFireByHandle(e,"AddOutput","angles 0 180 0",0.00,null,null);
 		speederallowed = false;
+		//local sst = "say |S#6|m"+DAMAGE_MINIGUN.tostring()+"|b"+DAMAGE_BEAM.tostring()+"|e"+DAMAGE_EXPLOSION.tostring()+"|r"+DAMAGE_ROCKET.tostring()+"|";
+		//EntFire("server","Command",sst,0.00,null);	(removed in #6, a bit confusing for people)
 	}
 }
 
